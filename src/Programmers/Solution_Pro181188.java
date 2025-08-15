@@ -9,12 +9,23 @@ package Programmers;
     모든 폭격 미사일을 요격하기 위해 필요한 요격 미사일 수의 최솟값을 return 하도록 solution 함수를 완성
  */
 
+import java.util.Arrays;
+
 public class Solution_Pro181188 {               //요격 시스템
     class Solution {
         public int solution(int[][] targets) {
             int answer = 0;
 
+            int missile = 0;    //현재 요격할 미사일 위치, 낮은 x좌표에서부터 시작
 
+            Arrays.sort(targets, (a, b) -> Integer.compare(a[1], b[1]));
+
+            for(int[] arr : targets){
+                if(missile <= arr[0]){
+                    answer++;
+                    missile = arr[1];
+                }
+            }
 
             return answer;
         }
