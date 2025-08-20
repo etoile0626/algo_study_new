@@ -106,7 +106,7 @@ public class Main_BJ2578 {              //빙고
                 int num = Integer.parseInt(st.nextToken());
                 isIn(num);
                 cnt++;
-                if(bingo >= 3){
+                if(bingo >= 3){                     //빙고 갯수가 한 번에 늘어날 것을 대비
                     break;
                 }
             }
