@@ -23,8 +23,10 @@ public class Main_BJ2578 {              //빙고
         for(int i = 0; i < 5; i++){
             for(int j = 0; j < 5; j++) {
                 if(arr[i][j] == num){
+                    //불린 숫자 지우기
                     arr[i][j] = 0;
-                    isCal(i, j);
+                    //빙고 여부 검사
+                    isCal(i, j);      
                     isRow(i, j);
                     isCross(i, j);
                 }
@@ -35,7 +37,7 @@ public class Main_BJ2578 {              //빙고
     private static void isCross(int i, int j) {
         if(i == j){
             cross1++;
-            if(cross1 == 5 && !cross1Done){
+            if(cross1 == 5 && !cross1Done){         //대각선 전부 0 && 중복으로 체크된 것이 아니라면
                 bingo++;
                 cross1Done = true;
             }
@@ -43,7 +45,7 @@ public class Main_BJ2578 {              //빙고
 
         if(i + j == 4){
             cross2++;
-            if(cross2 == 5 && !cross2Done){
+            if(cross2 == 5 && !cross2Done){         //대각선 전부 0 && 중복으로 체크된 것이 아니라면
                 bingo++;
                 cross2Done = true;
             }
@@ -62,7 +64,7 @@ public class Main_BJ2578 {              //빙고
 
         if(flag && !rowDone[i]){
             bingo++;
-            rowDone[i] = true;
+            rowDone[i] = true;                  //중복된 가로줄 방지용
         }
     }
 
@@ -78,7 +80,7 @@ public class Main_BJ2578 {              //빙고
 
         if(flag && !colDone[j]){
             bingo++;
-            colDone[j] = true;
+            colDone[j] = true;                  //중복된 세로줄 방지용
         }
     }
 
