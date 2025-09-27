@@ -36,7 +36,7 @@ public class Main_BJ2565 {                                      //전깃줄
 
         Arrays.sort(wire, (o1, o2) -> o1[0] - o2[0]);           //a 전봇대 값 기준으로 정렬
 
-        int[] dp = new int[n+1];                                          //i번째 전깃줄을 이었을때 설치 가능한 전깃줄의 최대 갯수
+        int[] dp = new int[n+1];                                          //i번째 전깃줄을 마지막으로 이었을때 설치 가능한 전깃줄의 최대 갯수
 
         for(int i = 1; i <= n; i++){
              dp[i] = 1;                                                   //설치 가능한 전깃줄의 최대갯수를 최솟값 1로 초기화
