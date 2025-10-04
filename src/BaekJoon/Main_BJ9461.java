@@ -15,13 +15,13 @@ public class Main_BJ9461 {                  //파도반 수열
         for(int T = 0; T < t; T++){
             int n = sc.nextInt();
 
-            int[] dp = new int[n+1];
+            long[] dp = new long[n+1];
 
             dp[1] = 1;
-            if(n > 2) {
+            if(n > 1) {
                 dp[2] = 1;
 
-                if(n > 3) {
+                if(n > 2) {
                     dp[3] = 1;
                 }
             }
