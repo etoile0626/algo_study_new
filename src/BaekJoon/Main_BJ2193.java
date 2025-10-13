@@ -14,7 +14,7 @@ public class Main_BJ2193 {                  //이친수
 
         int n = sc.nextInt();
 
-        int[] dp = new int[n+1];        //i자리 수일때 이친수
+        long[] dp = new long[n+1];        //i자리 수일때 이친수
         dp[1] = 1;                      //1
         //dp[2] = 1;                      //10
 
