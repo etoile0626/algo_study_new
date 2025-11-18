@@ -8,7 +8,7 @@ public class Main_BJ11653 {                 //소인수분해
 
         int n = sc.nextInt();
 
-        for (int i = 2; i <= Math.sqrt(n); i++) {	// 또는 i * i <= N
+        for (int i = 2; i <= Math.sqrt(n); i++) {	// 또는 i * i <= n
             while (n % i == 0) {
                 System.out.println(i);
                 n /= i;
