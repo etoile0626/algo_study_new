@@ -4,9 +4,9 @@ import java.util.Scanner;
 
 public class Main_BJ10872 {                         //팩토리얼
 
-    static int pact(int n){
+    static long pact(int n){
         if(n <= 1){
-            return n;
+            return 1;
         } else {
             return n * pact(n - 1);
         }
