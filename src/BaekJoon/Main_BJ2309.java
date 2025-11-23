@@ -23,9 +23,11 @@ public class Main_BJ2309 {                          //일곱 난쟁이
                     arr[i] = 0;
                     arr[j] = 0;
                     Arrays.sort(arr);
+
                     for (int k = 2; k < 9; k++) {
                         System.out.println(arr[k]);
                     }
+
                     return;
                 }
             }
