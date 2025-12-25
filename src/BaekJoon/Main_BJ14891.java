@@ -20,6 +20,7 @@ import java.util.StringTokenizer;
  */
 
 public class Main_BJ14891 {                         //톱니바퀴
+    //다시풀기
     static final int MIN_IDX = 0; // 톱니바퀴 최소 idx
     static final int MAX_IDX = 3; // 톱니바퀴 최대 idx
     static final int LEFT = 6; // 톱니바퀴가 겹쳐질 때 왼쪽값
