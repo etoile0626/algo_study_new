@@ -28,7 +28,7 @@ public class Main_BJ2740 {              //행렬 곱셈
         st = new StringTokenizer(br.readLine());
 
         // B행렬 입력
-        st.nextToken();		// 어차피 M값으로 같은 수이기 때문에 버려도 상관 없다.
+        m = Integer.parseInt(st.nextToken());
         int K = Integer.parseInt(st.nextToken());
 
         int[][] B = new int[m][K];
