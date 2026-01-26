@@ -6,5 +6,19 @@ package Programmers;
  */
 
 public class Solution_Pro87389 {                            //나머지가 1이 되는 수 찾기
+    class Solution {
+        public int solution(int n) {
+            int answer = 1;
 
+            while(answer > 0){
+                if(n % answer == 1){
+                    break;
+                }
+
+                answer++;
+            }
+
+            return answer;
+        }
+    }
 }
