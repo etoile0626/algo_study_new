@@ -8,5 +8,38 @@ package Programmers;
  */
 
 public class Solution_Pro131128 {                                           //숫자 짝꿍
+    class Solution {
+        public String solution(String X, String Y) {
+            int[] cntX = new int[10];
+            int[] cntY = new int[10];
 
+            for(int i = 0; i < X.length(); i++){
+                int num = X.charAt(i) - '0';
+                cntX[num]++;
+            }
+
+            for(int i = 0; i < Y.length(); i++){
+                int num = Y.charAt(i) - '0';
+                cntY[num]++;
+            }
+
+            StringBuilder sb = new StringBuilder();
+            for(int i = 9; i >= 0; i--){
+                int cnt = Math.min(cntX[i], cntY[i]);
+
+                for(int j = 0; j < cnt; j++){
+                    sb.append(i);
+                }
+            }
+
+            String answer = sb.toString();
+            if(answer.equals("")){
+                answer = "-1";
+            } else if(answer.startsWith("0")){
+                answer = "0";
+            }
+
+            return answer;
+        }
+    }
 }
