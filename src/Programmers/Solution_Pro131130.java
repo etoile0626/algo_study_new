@@ -13,8 +13,6 @@ import java.util.Comparator;
 import java.util.List;
 
 public class Solution_Pro131130 {                                       //혼자 놀기의 달인
-    import java.util.*;
-
     class Solution {
         public int solution(int[] cards) {
             int n = cards.length;
