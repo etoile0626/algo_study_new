@@ -10,8 +10,6 @@ package Programmers;
  */
 
 public class Solution_Pro134240 {                                           //푸드 파이터 대회
-    import java.util.*;
-
     class Solution {
         public String solution(int[] food) {
             StringBuilder sb = new StringBuilder();
