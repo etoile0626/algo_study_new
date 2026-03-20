@@ -5,6 +5,8 @@ public class Solution_Pro12930 {                        //이상한 문자 만�
         public String solution(String s) {
             String answer = "";
 
+            s = s.toLowerCase();
+
             String[] str = s.split("");
 
             int key = 0;
