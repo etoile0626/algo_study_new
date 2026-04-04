@@ -10,7 +10,6 @@ package Programmers;
 public class Solution_Pro12914 {                            //멀리 뛰기
     class Solution {
         public long solution(int n) {
-            long answer = 0;
             long[] dp = new long[n+1];
 
             dp[0] = 0;
