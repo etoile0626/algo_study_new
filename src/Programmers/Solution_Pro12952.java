@@ -5,6 +5,7 @@ package Programmers;
  */
 
 public class Solution_Pro12952 {                                        //N-Queen
+    //다시 풀기
     class Solution {
         static boolean[] width;                             //가로열 체크
         static boolean[] diagonal1;                         //대각선 체크 1
