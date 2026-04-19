@@ -22,16 +22,17 @@ public class Main_BJ14717 {                                      //앉았다
         int b = sc.nextInt();
         int n = 153;                                    //전체 경우의 수, 18장 중 2개를 뽑는 경우의 수
         int cnt = 0;
+        int sum = (a + b) % 10;                         //영학이 끗 계산
 
         //땡인지 아닌지 구분
         if(a == b){                                   //땡이면
             cnt = n - (10 - a);                          //a땡보다 하위의 족보 갯수 세기 (상위의 족보 개수를 전체에서 뺌)
         } else{                                         //끗이면
             for(int i = 1; i <= 10; i++){
-                for(int j = 1; j <= 10; j++){
-                    int sum = (i + j) % 10;             //상대의 끗 계산
+                for(int j = i + 1; j <= 10; j++){
+                    int tmp = (i + j) % 10;             //상대의 끗 계산
 
-                    if(sum < (a+b)%10){                 //영학이가 이기는 경우라면
+                    if(tmp < sum){                      //영학이가 이기는 경우라면
                         if(a == i || a == j || b == i || b == j){           //상대와 내가 같은 수를 가지고 있으면 해당 끗이 나오는 수의 조합이 2가지
                             cnt += 2;
                         } else{
