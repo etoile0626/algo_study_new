@@ -24,7 +24,7 @@ import java.util.HashSet;
 import java.util.Set;
 import java.util.StringTokenizer;
 
-public class Main_BJ15787 {                              //기차가 어둠을 헤치 은하수를
+public class Main_BJ15787 {                              //기차가 어둠을 헤치고 은하수를
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st = new StringTokenizer(br.readLine());
