@@ -43,7 +43,6 @@ public class Solution_SWEA2005 {                        //파스칼의 삼각형
                 sb.append("\n");
             }
         }
-
         System.out.println(sb.toString());
     }
 }
