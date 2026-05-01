@@ -14,17 +14,41 @@ import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
 public class Solution_swea5215 {                        //햄버거 다이어트
+    //다시 풀기
+    static int n, l, max;
+    static int[][] arr;
+
+    public static void dfs(int cnt, int sum, int limit){
+        if(limit > l){
+            return;
+        }
+        if(cnt == n){
+            if(limit <= l) {
+                max = Math.max(max, sum);
+            }
+
+            return;
+        }
+
+        //cnt번 식재료를 고른 경우
+        dfs(cnt + 1, sum + arr[cnt][0], limit + arr[cnt][1]);
+
+        //cnt번 식재료를 고르지 않은 경우
+        dfs(cnt + 1, sum, limit);
+    }
+
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st;
+        StringBuilder sb = new StringBuilder();
 
         int t = Integer.parseInt(br.readLine());
-        for(int T = 0; T < t; T++){
+        for(int T = 1; T <= t; T++){
             st = new StringTokenizer(br.readLine());
 
-            int n = Integer.parseInt(br.readLine());                //재료 갯수
-            int l = Integer.parseInt(br.readLine());                //칼로리 한도
-            int[][] arr = new int[n][2];
+            n = Integer.parseInt(st.nextToken());                //재료 갯수
+            l = Integer.parseInt(st.nextToken());                //칼로리 한도
+            arr = new int[n][2];
 
             for(int i = 0; i < n; i++){
                 st = new StringTokenizer(br.readLine());
@@ -33,7 +57,12 @@ public class Solution_swea5215 {                        //햄버거 다이어트
                 arr[i][1] = Integer.parseInt(st.nextToken());       //i번째 재료의 칼로리
             }
 
+            max = 0;
+            dfs(0, 0, 0);
 
+            sb.append("#").append(T).append(" ").append(max).append("\n");
         }
+
+        System.out.print(sb.toString());
     }
 }
