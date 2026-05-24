@@ -5,6 +5,15 @@ import java.io.InputStreamReader;
 import java.util.Arrays;
 import java.util.StringTokenizer;
 
+/*
+ * 서로 다른 위치에 N개의 보급 창고
+ * 야영 위치에서 가장 가까운 '두 개'의 보급 창고로부터 물품을 지원
+ * 위험도 = 해당 위치에서 '두 번째'로 가까운 보급 창고까지의 거리
+ * 모든 야영 위치 중에서 위험도가 가장 큰 위치를 찾고 그때의 위험도를 구하기.
+ * *가장 왼쪽 보급 창고 위치 이상, 가장 오른쪽 보급 창고 사이에서 야영 가능,
+ * *보급 창고가 있는 위치에서도 야영 가능
+ */
+
 public class Solution_swea_ss2 {
     //미완성, 실패
     public static void main(String[] args) throws Exception{
