@@ -12,7 +12,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.StringTokenizer;
 
-public class Solution_SWEA1206 {                                //[S/W 문제해결 기본] 1일차 - View
+public class Solution_swea1206 {                                //[S/W 문제해결 기본] 1일차 - View
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st;
