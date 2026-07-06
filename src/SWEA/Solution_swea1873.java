@@ -32,6 +32,97 @@ import java.util.StringTokenizer;
  */
 
 public class Solution_swea1873 {                            //상호의 배틀필드
+    static int h, w, n, x, y;
+    static char[][] arr;
+
+    //전차의 명령 수행 함수
+    private static void moving(char c){
+        if(c == 'S') {
+            shooting(arr[x][y]);
+        }
+        else if(c == 'U') {
+            arr[x][y] = '^';
+
+            int nx = x - 1;
+            if (0 <= nx && nx < h && arr[nx][y] == '.') {
+                arr[x][y] = '.';
+                x = nx;
+                arr[x][y] = '^';
+            }
+        }
+        else if(c == 'D') {
+            arr[x][y] = 'v';
+
+            int nx = x + 1;
+            if(0 <= nx&&nx < h && arr[nx][y] == '.'){
+                arr[x][y] = '.';
+                x = nx;
+                arr[x][y] = 'v';
+            }
+        }
+        else if(c == 'L') {
+            arr[x][y] = '<';
+
+            int ny = y - 1;
+            if (0 <= ny && ny < w && arr[x][ny] == '.') {
+                arr[x][y] = '.';
+                y = ny;
+                arr[x][y] = '<';
+            }
+        }
+        else if(c == 'R') {
+            arr[x][y] = '>';
+            
+            int ny = y + 1;
+            if (0 <= ny && ny < w && arr[x][ny] == '.') {
+                arr[x][y] = '.';
+                y = ny;
+                arr[x][y] = '>';
+            }
+        }
+    }
+
+    //총알이 벽을 부수는지 검증하는 메서드
+    private static void shooting(char c){
+        if(c == '^'){
+            for(int i = x - 1; i >= 0; i--){
+                if(arr[i][y] == '#'){
+                    break;
+                } else if(arr[i][y] == '*'){
+                    arr[i][y] = '.';
+                    break;
+                }
+            }
+        } else if(c == 'v'){
+            for(int i = x + 1; i < h; i++){
+                if(arr[i][y] == '#'){
+                    break;
+                } else if(arr[i][y] == '*'){
+                    arr[i][y] = '.';
+                    break;
+                }
+            }
+        } else if(c == '<'){
+            for(int j = y - 1; j >= 0; j--){
+                if(arr[x][j] == '#'){
+                    break;
+                } else if(arr[x][j] == '*'){
+                    arr[x][j] = '.';
+                    break;
+                }
+            }
+        } else if(c == '>'){
+            for(int j = y + 1; j < w; j++){
+                if(arr[x][j] == '#'){
+                    break;
+                } else if(arr[x][j] == '*'){
+                    arr[x][j] = '.';
+                    break;
+                }
+            }
+        }
+    }
+
     public static void main(String[] args) throws IOException {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         StringTokenizer st;
@@ -40,10 +131,44 @@ public class Solution_swea1873 {                            //상호의 배틀�
         int T = Integer.parseInt(br.readLine());
         for(int t = 1; t <= T; t++){
             st = new StringTokenizer(br.readLine());
-            int h = Integer.parseInt(st.nextToken());
-            int w = Integer.parseInt(st.nextToken());
+            h = Integer.parseInt(st.nextToken());
+            w = Integer.parseInt(st.nextToken());
+            arr = new char[h][w];
+            x = 0;
+            y = 0;                                          //현재 탱크의 위치
 
+            for(int i = 0; i < h; i++){
+                String str = br.readLine();
+                for(int j = 0; j < w; j++){
+                    arr[i][j] = str.charAt(j);
 
+                    if(arr[i][j] == '^' || arr[i][j] == 'v' || arr[i][j] == '<' ||arr[i][j] == '>'){
+                        x = i;
+                        y = j;
+                    }
+                }
+            }
+
+            n = Integer.parseInt(br.readLine());
+            String order = br.readLine();
+
+            for(int i = 0; i < n; i++){
+                char c = order.charAt(i);
+
+                moving(c);
+            }
+
+            //출력
+            sb.append("#").append(t).append(" ");
+            for(int i = 0; i < h; i++){
+                for(int j = 0; j < w; j++){
+                    sb.append(arr[i][j]);
+                }
+
+                sb.append("\n");
+            }
         }
+
+        System.out.println(sb.toString());
     }
 }
