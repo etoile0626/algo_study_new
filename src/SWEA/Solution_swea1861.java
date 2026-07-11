@@ -23,6 +23,7 @@ public class Solution_swea1861 {                        //정사각형 방
         for(int t = 1; t <= T; t++){
             int n  = Integer.parseInt(br.readLine());
             int[][] arr = new int[n][n];
+            int start = 0;
 
             for(int i = 0; i < n; i++){
                 st = new StringTokenizer(br.readLine());
@@ -32,7 +33,7 @@ public class Solution_swea1861 {                        //정사각형 방
                 }
             }
 
-            sb.append("#").append(t).append(" ").append(start).append(" ").append();
+            sb.append("#").append(t).append(" ").append(start).append(" ").append().append("\n");
         }
 
         System.out.println(sb.toString());
