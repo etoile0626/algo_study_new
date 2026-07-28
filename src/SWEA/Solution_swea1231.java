@@ -37,7 +37,7 @@ public class Solution_swea1231 {                //[S/W 문제해결 기본] 9일
         for(int t = 1; t <= 10; t++){
             str = new StringBuilder();
             n = Integer.parseInt(br.readLine());
-            arr = new String[n+1];               //완전이진트리
+            arr = new String[n+1];               //완전이진트리, 왼쪽자식-i*2. 오른쪽자식-i*2+1
             for(int i = 1; i <= n; i++){
                 st = new StringTokenizer(br.readLine());
 
