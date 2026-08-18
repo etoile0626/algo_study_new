@@ -15,6 +15,7 @@ import java.util.StringTokenizer;
  */
 
 public class Solution_swea1263 {                    //[S/W 문제해결 응용] 8일차 - 사람 네트워크2
+    //다시 풀기
     static int n;
     static int[][] graph;
     static int[] dist;
