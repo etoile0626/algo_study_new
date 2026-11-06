@@ -22,11 +22,20 @@ public class Solution_swea6692 {                        //다솔이의 월급 �
             int n = Integer.parseInt(br.readLine());
             double[] probability = new double[n];
             int[] money = new int[n];
-            st = new StringTokenizer(br.readLine());
 
+            for(int i = 0; i < n; i++){
+                st = new StringTokenizer(br.readLine());
 
+                probability[i] = Double.parseDouble(st.nextToken());
+                money[i] = Integer.parseInt(st.nextToken());
+            }
 
-            sb.append("#").append(t).append(" ").append().append("\n");
+            double sum = 0;
+            for(int i = 0; i < n; i++){
+                sum += probability[i] * money[i];
+            }
+
+            sb.append("#").append(t).append(" ").append(String.format("%.6f", sum)).append("\n");
         }
 
         System.out.println(sb.toString());
