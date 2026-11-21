@@ -1,3 +1,5 @@
+src/local/
+
 ### IntelliJ IDEA ###
 out/
 !**/src/main/**/out/
